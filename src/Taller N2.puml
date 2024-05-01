@@ -1,0 +1,45 @@
+@startuml
+class Tren{
+
+- Identificador: String
+- Ruta: String
+- Precio boleto: int
+- Descripcion: String
+- Funcionamiento: String
++ Tren(Identificador: String, Ruta: String, Precio boleto: int,Descripcion: String, Funcionamiento: String)
++ getIdentificador(): String
++ getRuta(): int
++ getPrecioboleto(): int
++ getDescripcion(): String
++ getFuncionamiento(): String
+}
+
+class Trabajador{
+
+- Nombre completo: String
+- Cargo: String
+- Salario: int
+- Experiencia: int
++ Trabajador(Nombre completo: String, Cargo: String, Salario: int, Experiencia: int)
++ getNombrecompleto(): String
++ getCargo(): String
++ getSalario(): int
++ getExperiencia(): int
+
+}
+class SistemaImpl{
++ Menu(): Void
+}
+
+interface Sistema{
+}
+
+class viajes{
+
+}
+
+class funcionamiento{
+
+}
+
+@enduml
