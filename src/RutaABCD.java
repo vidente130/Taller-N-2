@@ -10,10 +10,17 @@ public enum RutaABCD {
     Municipalidad,
 
     TerminalDeBuses,
-    UniversidadAntofagasta,
-    UniversidadCatólicaDelNorte,
     PlayaBalneario,
     PlazaColon,
     AvenidaSalvadorAllende,
     HospitalRegional,
+    Enjoy,
+    Costanera,
+    HospitalAntiguo,
+    CementerioGeneral,
+    MercadoCentral,
+
+    PlazaJardínJaponés,
+    Puerto,
+    PlazaBicentenario,
 }
