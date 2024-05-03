@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        SystemaImpl sistem = new SystemaImpl();
+        SistemaImpl sistem = new SistemaImpl();
         sistem.menu();
     }
 }
