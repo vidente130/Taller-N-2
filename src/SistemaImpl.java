@@ -1,29 +1,19 @@
 import java.util.Scanner;
 
 public class SistemaImpl implements Sistema {
+
+    Scanner opcion = new Scanner (System.in);
     @Override
     public void menu() {
-        Scanner opcion = new Scanner (System.in);
+
         mensajeMenu();
         String Opcion = opcion.nextLine();
         while (true){
             switch(Opcion){
                 case "1":
                     System.out.println("Registrar trenes");
+                    registrarTren();
 
-                    System.out.println("Elija un identificador del tren ");
-                    String identificador = opcion.nextLine();
-
-                    System.out.println("Escriba el precio del boleto ");
-                    int precio = opcion.nextInt();
-
-                    System.out.println("Escriba una descripcion al tren ");
-                    String descripcion = opcion.nextLine();
-
-                    System.out.println("Escriba si el tren esta en funcionamiento con un SI o un NO ");
-                    String funcionamiento = opcion.nextLine().toUpperCase();
-
-                    registrarTren(identificador, precio, descripcion,funcionamiento);
                     break;
                 case "2":
                     System.out.println("Registrar empleado");
@@ -87,13 +77,33 @@ public class SistemaImpl implements Sistema {
         System.out.println("Elija una opcion:");
     }
 
+    public void registrarTren(){
+
+
+        System.out.println("Elija un identificador del tren ");
+        String identificador = opcion.nextLine();
+
+        System.out.println("Escriba el precio del boleto ");
+        int precio = opcion.nextInt();
+
+        System.out.println("Escriba una descripcion al tren ");
+        String descripcion = opcion.nextLine();
+
+        System.out.println("Escriba si el tren esta en funcionamiento con un SI o un NO ");
+        String funcionamiento = opcion.nextLine().toUpperCase();
+
+        registrarTren(identificador, precio, descripcion,funcionamiento);
+
+    }
+
     @Override
     public void registrarTren(String identificador,int Precioboleto, String Descripcion, String Funcionamiento) {
 
-        if (identificador.length() == 4){
+    }
 
-            System.out.println("☺ Se guardo el identificador que es: " + identificador);
-        }
+    public void registrarTrabajador() {
+
+
     }
 
     @Override
