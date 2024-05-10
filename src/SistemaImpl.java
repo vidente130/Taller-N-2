@@ -17,20 +17,7 @@ public class SistemaImpl implements Sistema {
                     break;
                 case "2":
                     System.out.println("Registrar empleado");
-
-                    System.out.println("Escriba el nombre completo del empleado ");
-                    String nombre = opcion.nextLine();
-
-                    System.out.println("Escriba el cargo del empleado ");
-                    String cargo = opcion.nextLine();
-
-                    System.out.println("Escriba el salario del empleado ");
-                    int salario = opcion.nextInt();
-
-                    System.out.println("Escriba los anios de experiencia del empleado en numeros  ");
-                    int experiencia = opcion.nextInt();
-
-                    registrarTrabajador(nombre, cargo, salario, experiencia);
+                    registrarTrabajador();
                     break;
                 case "3":
                     System.out.println("Actualizacion de funcionamiento de trenes");
@@ -103,6 +90,20 @@ public class SistemaImpl implements Sistema {
 
     public void registrarTrabajador() {
 
+
+        System.out.println("Escriba el nombre completo del empleado ");
+        String nombre = opcion.nextLine();
+
+        System.out.println("Escriba el cargo del empleado ");
+        String cargo = opcion.nextLine();
+
+        System.out.println("Escriba el salario del empleado ");
+        int salario = opcion.nextInt();
+
+        System.out.println("Escriba los anios de experiencia del empleado en numeros  ");
+        int experiencia = opcion.nextInt();
+
+        registrarTrabajador(nombre, cargo, salario, experiencia);
 
     }
 
