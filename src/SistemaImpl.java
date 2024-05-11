@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class SistemaImpl implements Sistema {
 
+
+
     Scanner opcion = new Scanner (System.in);
     @Override
     public void menu() {
@@ -21,19 +23,13 @@ public class SistemaImpl implements Sistema {
                     break;
                 case "3":
                     System.out.println("Actualizacion de funcionamiento de trenes");
-
-                    System.out.println("Escriba el identificador del tren ");
-                    String trenBuscado = opcion.nextLine();
-
-                    actualizarFuncionamiento(trenBuscado);
+                    actualizarFuncionamiento();
                     break;
                 case "4":
                     System.out.println("Busqueda de viajes");
 
-                    System.out.println("Escriba el lugar donde desea ir ");
-                    String busqueda = opcion.nextLine();
-                    busquedaViajes(busqueda);
 
+                    busquedaViajes();
                     break;
                 case "5":
                     System.out.println("Estadisticas");
@@ -85,11 +81,11 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void registrarTren(String identificador,int Precioboleto, String Descripcion, String Funcionamiento) {
+        Tren tren  = new Tren(identificador,Precioboleto,Descripcion,Funcionamiento);
 
     }
 
     public void registrarTrabajador() {
-
 
         System.out.println("Escriba el nombre completo del empleado ");
         String nombre = opcion.nextLine();
@@ -109,7 +105,15 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void registrarTrabajador(String nombre, String cargo, int salario, int experiencia) {
+        Trabajador trabajador = new Trabajador(nombre, cargo, salario, experiencia);
 
+    }
+
+    public void actualizarFuncionamiento(){
+        System.out.println("Escriba el identificador del tren ");
+        String trenBuscado = opcion.nextLine();
+
+        actualizarFuncionamiento(trenBuscado);
 
     }
 
@@ -118,9 +122,15 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    public void busquedaViajes(){
+        System.out.println("Escriba el lugar donde desea ir ");
+        String busqueda = opcion.nextLine();
+        busquedaViajes(busqueda);
+
+    }
+
     @Override
     public void busquedaViajes(String busqueda) {
-
 
     }
 

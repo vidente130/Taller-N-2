@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Trabajador {
 
     private String nombrecompleto;
@@ -8,12 +10,14 @@ public class Trabajador {
 
     private int experiencia;
 
+    private ArrayList<Trabajador> trabajadores;
 
     public Trabajador (String nombrecompleto, String cargo, int salario, int experiencia){
         this.nombrecompleto = nombrecompleto;
         this.cargo = cargo;
         this.salario = salario;
         this.experiencia = experiencia;
+        this.trabajadores = new ArrayList<>();
     }
 
     public String getNombrecompleto(){
@@ -29,6 +33,10 @@ public class Trabajador {
 
     public int getExperiencia(){
         return experiencia;
+    }
+
+    public ArrayList<Trabajador> getTrabajadores() {
+        return trabajadores;
     }
 
     public void setNombrecompleto(String nombrecompleto) {
