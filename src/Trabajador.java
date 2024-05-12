@@ -36,6 +36,7 @@ public class Trabajador {
     }
 
     public ArrayList<Trabajador> getTrabajadores() {
+
         return trabajadores;
     }
 

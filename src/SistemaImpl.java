@@ -81,8 +81,27 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void registrarTren(String identificador,int Precioboleto, String Descripcion, String Funcionamiento) {
-        Tren tren  = new Tren(identificador,Precioboleto,Descripcion,Funcionamiento);
-
+        if (identificador.length() == 4) {
+            if (Precioboleto <= 10000 || Precioboleto > 0){
+                if (Descripcion.length() > 0){
+                    if (Funcionamiento == "SI" || Funcionamiento == "NO"){
+                        Tren tren = new Tren(identificador, Precioboleto, Descripcion, Funcionamiento);
+                    }
+                    else{
+                        System.out.println("No elegio la opcion SI o NO");
+                    }
+                }
+                else{
+                    System.out.println("No le puso descripcion");
+                }
+            }
+            else{
+                System.out.println("El precio del boleto no tiene que ser superior a 10000, ni menor a 0");
+            }
+        }
+        else{
+            System.out.println("El identificador no tiene los 4 caracteres");
+        }
     }
 
     public void registrarTrabajador() {
@@ -91,7 +110,7 @@ public class SistemaImpl implements Sistema {
         String nombre = opcion.nextLine();
 
         System.out.println("Escriba el cargo del empleado ");
-        String cargo = opcion.nextLine();
+        String cargo = opcion.nextLine().toLowerCase();
 
         System.out.println("Escriba el salario del empleado ");
         int salario = opcion.nextInt();
@@ -105,7 +124,30 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void registrarTrabajador(String nombre, String cargo, int salario, int experiencia) {
-        Trabajador trabajador = new Trabajador(nombre, cargo, salario, experiencia);
+        if (nombre.length() > 0){
+            if (cargo == "CONDUCTOR" || cargo == "PERSONAL DE SERVICIO" || cargo == "GUARDAFRENO" || cargo == "JEFE DE TREN"){
+                if (salario > 0){
+                    if (experiencia >= 0){
+                        Trabajador trabajador = new Trabajador(nombre, cargo, salario, experiencia);
+                    }
+                    else{
+                        System.out.println("Error, Los años de experiencia no pueden ser negativos");
+                    }
+
+                }
+                else{
+                    System.out.println("No puso salario valido");
+                }
+
+            }
+            else{
+                System.out.println("No puso bien el cargo");
+            }
+
+        }
+        else{
+            System.out.println("No puso un nombre");
+        }
 
     }
 

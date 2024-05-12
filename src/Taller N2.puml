@@ -34,12 +34,4 @@ class SistemaImpl{
 interface Sistema{
 }
 
-class viajes{
-
-}
-
-class funcionamiento{
-
-}
-
 @enduml

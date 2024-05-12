@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Tren {
 
     private String identificador;
@@ -8,11 +10,14 @@ public class Tren {
 
     private String Funcionamiento;
 
+    private ArrayList<Tren> trenes;
+
     public Tren (String identificador,int Precioboleto, String Descripcion, String Funcionamiento){
         this.identificador = identificador;
         this.Precioboleto = Precioboleto;
         this.Descripcion = Descripcion;
         this.Funcionamiento = Funcionamiento;
+        this.trenes = new ArrayList<>();
     }
     public String getIdentificador(){
         return identificador;
