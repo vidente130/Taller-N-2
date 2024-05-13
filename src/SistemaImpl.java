@@ -1,8 +1,16 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class SistemaImpl implements Sistema {
 
+    private ArrayList<Trabajador> trabajadores;
+    private ArrayList<Tren> trenes;
 
+    public SistemaImpl() {
+        this.trabajadores = new ArrayList<>();
+        this.trenes = new ArrayList<>();
+    }
 
     Scanner opcion = new Scanner (System.in);
     @Override
@@ -86,6 +94,8 @@ public class SistemaImpl implements Sistema {
                 if (Descripcion.length() > 0){
                     if (Funcionamiento == "SI" || Funcionamiento == "NO"){
                         Tren tren = new Tren(identificador, Precioboleto, Descripcion, Funcionamiento);
+                        trenes.add(tren);
+
                     }
                     else{
                         System.out.println("No elegio la opcion SI o NO");
@@ -129,6 +139,7 @@ public class SistemaImpl implements Sistema {
                 if (salario > 0){
                     if (experiencia >= 0){
                         Trabajador trabajador = new Trabajador(nombre, cargo, salario, experiencia);
+                        trabajadores.add(trabajador);
                     }
                     else{
                         System.out.println("Error, Los años de experiencia no pueden ser negativos");
@@ -161,6 +172,33 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void actualizarFuncionamiento(String trenBuscado ) {
+        for (int i = 0; i < trenes.size(); i++){
+
+            if (trenBuscado.equals(trenes.get(i).getIdentificador())){
+                System.out.println("El tren se encuentra en funcionamiento");
+                String pregunta = opcion.nextLine();
+
+                switch (pregunta){
+
+                    case "SI":
+                        trenes.get(i).setFuncionamiento("Si");
+                        break;
+
+
+
+                    case "NO":
+                        trenes.get(i).setFuncionamiento("No");
+                        break;
+
+                    default:
+                        System.out.println("Respuesta no valida");
+                }
+
+            }
+            else {
+                System.out.println("El tren no se encuentra en la lista");
+            }
+        }
 
     }
 
@@ -172,7 +210,10 @@ public class SistemaImpl implements Sistema {
     }
 
     @Override
+
     public void busquedaViajes(String busqueda) {
+
+
 
     }
 
