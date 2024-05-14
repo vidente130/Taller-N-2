@@ -7,7 +7,7 @@ public interface Sistema {
 
 
     //los campos no pueden estar vacios
-    void registrarTren(String identificador,int Precioboleto, String Descripcion, String Funcionamiento);
+    void registrarTren(String identificador,String tipoderuta,int Precioboleto, String Descripcion, String Funcionamiento);
 
 
     void registrarTrabajador(String nombre, String cargo, int salario, int experiencia);

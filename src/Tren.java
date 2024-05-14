@@ -4,6 +4,8 @@ public class Tren {
 
     private String identificador;
 
+    private String ruta;
+
     private int Precioboleto;
 
     private String Descripcion;
@@ -12,8 +14,9 @@ public class Tren {
 
     private ArrayList<Tren> trenes;
 
-    public Tren (String identificador,int Precioboleto, String Descripcion, String Funcionamiento){
+    public Tren (String identificador,String ruta,int Precioboleto, String Descripcion, String Funcionamiento){
         this.identificador = identificador;
+        this.ruta = ruta;
         this.Precioboleto = Precioboleto;
         this.Descripcion = Descripcion;
         this.Funcionamiento = Funcionamiento;
@@ -21,6 +24,10 @@ public class Tren {
     }
     public String getIdentificador(){
         return identificador;
+    }
+
+    public String getRuta(){
+        return ruta;
     }
     public int getPrecioboleto(){
         return Precioboleto;
@@ -31,6 +38,7 @@ public class Tren {
     public String getFuncionamiento(){
         return Funcionamiento;
     }
+
 
     public void setIdentificador(String identificador) {
         this.identificador = identificador;
