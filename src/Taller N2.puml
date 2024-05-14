@@ -8,10 +8,14 @@ class Tren{
 - Funcionamiento: String
 + Tren(Identificador: String, Ruta: String, Precio boleto: int,Descripcion: String, Funcionamiento: String)
 + getIdentificador(): String
-+ getRuta(): int
++ getRuta(): String
 + getPrecioboleto(): int
 + getDescripcion(): String
 + getFuncionamiento(): String
++ setIdentificador(): String
++ setPrecioBoleto(): int
++ setDescripcion(): String
++ setFuncionamiento(): String
 }
 
 class Trabajador{
@@ -28,10 +32,13 @@ class Trabajador{
 
 }
 class SistemaImpl{
+
++SistemaImpl()
 + Menu(): Void
 }
 
 interface Sistema{
+
 }
 
 @enduml

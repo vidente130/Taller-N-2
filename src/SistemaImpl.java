@@ -462,6 +462,86 @@ public class SistemaImpl implements Sistema {
     public void SaliryGuardar(){
         In in  = new In("Viajes");
         Out out = new Out("Viajes");
-        System.out.println();
+
+        System.out.println("trenes");
+        for(int i =0; i<trenes.size(); i++) {
+
+            System.out.println(trenes.get(i).getIdentificador() + " " + trenes.get(i).getRuta()  + " "
+                    + trenes.get(i).getPrecioboleto() + " " + trenes.get(i).getDescripcion() + " " +
+                    trenes.get(i).getFuncionamiento());
+        }
+
+        System.out.println("trabajadores");
+        for (int i =0; i<trabajadores.size(); i++){
+
+            System.out.println(trabajadores.get(i).getNombrecompleto() + " " + trabajadores.get(i).getCargo()
+            + " " + trabajadores.get(i).getSalario() + " " + trabajadores.get(i).getExperiencia());
+
+        }
+
+        System.out.println("estadisticas");
+        double contador = 0;
+        double contadorTotal = 0;
+        double porcentaje = 0;
+        for (int i = 0; i < trenes.size(); i++){
+            contadorTotal = contadorTotal + 1;
+            if (trenes.get(i).getFuncionamiento().equalsIgnoreCase("NO")){
+                contador = contador + 1;
+                System.out.println(contador);
+            }
+        }
+        if (contadorTotal == 0){
+            System.out.println("La lista de los trenes esta vacia");
+        }
+        else{
+            porcentaje = (contador/contadorTotal) * 100;
+            System.out.println("El porcentaje de los trenes inactivos es del: "+ porcentaje +"%");
+        }
+
+
+
+        int sumaDePrecios = 0;
+        int contador2 = 0;
+        double promedio = 0;
+        for (int i = 0; i < trenes.size(); i++){
+            contador2 += 1;
+            sumaDePrecios += trenes.get(i).getPrecioboleto();
+        }
+        if (contador2 == 0){
+            System.out.println("La lista de los trenes esta vacia");
+        }
+        else{
+            promedio = sumaDePrecios/contador2;
+            System.out.println("El promedio de los precios de cada tren en la lista es de: " + promedio + "$");
+        }
+
+
+
+
+        int sumaDePreciosA = 0;
+        int sumaDePreciosB = 0;
+        int sumaDePreciosC = 0;
+        int sumaDePreciosD = 0;
+
+        for (int i = 0; i < trenes.size(); i++){
+            if(trenes.get(i).getRuta().equalsIgnoreCase("A")){
+                sumaDePreciosA += trenes.get(i).getPrecioboleto();
+            }
+            if(trenes.get(i).getRuta().equalsIgnoreCase("B")){
+                sumaDePreciosB += trenes.get(i).getPrecioboleto();
+            }
+            if(trenes.get(i).getRuta().equalsIgnoreCase("C")){
+                sumaDePreciosC += trenes.get(i).getPrecioboleto();
+            }
+            if(trenes.get(i).getRuta().equalsIgnoreCase("D")){
+                sumaDePreciosD += trenes.get(i).getPrecioboleto();
+            }
+        }
+
+        System.out.println("porcentaje de trenes innactivos " + porcentaje + "% " +"promedio de los precios en proporcion a los trenes registrados "
+                + promedio + " La suma de los precios de los grupos: " + "A " + sumaDePreciosA   +"B " + sumaDePreciosB
+                +"C " + sumaDePreciosC +"D " + sumaDePreciosD);
+
+
     }
 }
