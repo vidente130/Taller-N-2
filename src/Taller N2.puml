@@ -1,4 +1,8 @@
 @startuml
+skin rose
+
+left to right direction
+
 class Tren{
 
 - Identificador: String
@@ -39,6 +43,7 @@ class SistemaImpl{
 
 + SistemaImpl()
 + Menu(): Void
++ estaEnRuta(String localidad, String tipoRuta): boolean
 }
 
 interface Sistema{
@@ -51,5 +56,7 @@ interface Sistema{
 + estadisticas(): Void
 }
 
-
+SistemaImpl ..|> Sistema : implementa
+Trabajador --> SistemaImpl: -trabajadores : ArrayList<Trabajador>
+Tren --> SistemaImpl: -trenes : ArrayList<Tren>
 @enduml

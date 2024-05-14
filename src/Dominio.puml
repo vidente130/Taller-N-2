@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skin rose
+left to right direction
+
+entity tren{
+*ID
+*Ruta
+*Precio de boleto
+*Descripcion
+*si esta en funcionamiento
+}
+
+entity trabajador{
+*Nombre completo
+*Cargo
+*Salario
+*Experiencia
+}
+
+entity usuario{
+
+}
+
+tren "1" -->"1..*" trabajador: > tiene
+usuario "1" --> "1" tren: > registra
+usuario "1" --> "1..*" trabajador: > registra
+@enduml
