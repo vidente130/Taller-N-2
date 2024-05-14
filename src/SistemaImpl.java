@@ -1,8 +1,8 @@
 import edu.princeton.cs.stdlib.In;
 import edu.princeton.cs.stdlib.Out;
-
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class SistemaImpl implements Sistema {
 
     private ArrayList<Trabajador> trabajadores;
@@ -117,6 +117,7 @@ public class SistemaImpl implements Sistema {
         System.out.println("Elija una opcion:");
     }
 
+
     public void registrarTren(){
 
 
@@ -141,6 +142,14 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    /**
+     * Esta funcion permite registra un Tren
+     * @param identificador El identificador del tren
+     * @param tipoderuta El tipo de ruta que va
+     * @param Precioboleto El precio de su boleto
+     * @param Descripcion La descripocion del tren
+     * @param Funcionamiento Si esta en funcionamiento o no
+     */
     @Override
     public void registrarTren(String identificador,String tipoderuta,int Precioboleto, String Descripcion, String Funcionamiento) {
         if (identificador.length() == 4) {
@@ -188,6 +197,13 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    /**
+     *  Esta funcion permite registrar a un trabajador
+     * @param nombre El nombre completo del trabajador
+     * @param cargo El cargo del trabajador
+     * @param salario El salario del trabajador
+     * @param experiencia Los anios de experiencia del trabajador
+     */
     @Override
     public void registrarTrabajador(String nombre, String cargo, int salario, int experiencia) {
         if (nombre.length() > 0){
@@ -226,6 +242,10 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    /**
+     * Esta funcion permite actualizar el funcionamiento del tren
+     * @param trenBuscado Busca un tren dentro de la lista de trenes
+     */
     @Override
     public void actualizarFuncionamiento(String trenBuscado) {
         int posicion2 = 0;
@@ -269,6 +289,10 @@ public class SistemaImpl implements Sistema {
         busquedaViajes(busqueda);
     }
 
+    /**
+     * Esta funcion permite realizar una busqueda de viajes
+     * @param busqueda Es la opcion si es por ubicacion o por funcionamiento
+     */
     @Override
     public void busquedaViajes(String busqueda){
 
@@ -327,6 +351,12 @@ public class SistemaImpl implements Sistema {
         estaEnRuta(localidad,tipoRuta);
     }
 
+    /**
+     * Esta funcion permite ver si existe la localidad que se eligio
+     * @param localidad La localidad que se eligio
+     * @param tipoRuta La ruta que se eligio
+     * @return retorna true si es verdadero el tipo de ruta con su localidad o false si no cumple la condicion
+     */
     public boolean estaEnRuta(String localidad, String tipoRuta){
 
         if (tipoRuta.equalsIgnoreCase("A") ){

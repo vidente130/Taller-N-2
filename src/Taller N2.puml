@@ -29,16 +29,27 @@ class Trabajador{
 + getCargo(): String
 + getSalario(): int
 + getExperiencia(): int
++ setNombrecompleto(): String
++ setCargo(): String
++ setSalario(): int
++ setExperiencia(): int
 
 }
 class SistemaImpl{
 
-+SistemaImpl()
++ SistemaImpl()
 + Menu(): Void
 }
 
 interface Sistema{
-
++ Menu(): Void
++ MensajeMenu(): Void
++ registrarTren(): Void
++ registrarTrabajador(): Void
++ actualizarFuncionamientoDeTren(): Void
++ busquedaDeViajes(): Void
++ estadisticas(): Void
 }
+
 
 @enduml
